@@ -1,0 +1,410 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const endorsements = [
+  {
+    quote: "My teacher and friend, Rabbi Moshe Miller, has the rare gift of making the profound feel accessible and communicating that which is complex with clarity.",
+    author: "Rabbi Efrem Goldberg",
+    title: "Senior Rabbi, Boca Raton Synagogue"
+  },
+  {
+    quote: "Lost in Transmission presents an unusually creative and penetrating reading of Tanach and Midrash. It is a deep work.",
+    author: "Dr. David Shatz",
+    title: "Ronald P. Stanton University Professor of Philosophy, Ethics, and Religious Thought, Yeshiva University"
+  },
+  {
+    quote: "Rabbi Moshe Miller's Lost in Transmission is a profound meditation and incisive analysis of the proper relationship between man and G-d.",
+    author: "Dr. Elisheva Carlebach",
+    title: "Salo Baron Professor of Jewish History, Culture and Society, Columbia University"
+  },
+  {
+    quote: "Rabbi Moshe Miller's remarkable gifts of analysis and expression compel the reader to look anew at both the wisdom of Torah and the mysteries of nature.",
+    author: "Rabbi Steven Pruzansky",
+    title: "Rabbi Emeritus, Congregation Bnai Yeshurun, Teaneck, New Jersey"
+  }
+];
+
+const foodForThought = [
+  "What is the distinction between choice and decision?",
+  "What is the meaning of covenantal vs. religious relationships with God?",
+  "How does context affect mitzvah observance?",
+  "What constitutes meaningfulness?",
+  "Are miracles beneficial or harmful?",
+  "Does Creation develop through trial-and-error or divine ordination?",
+  "What is the relationship between prayer and consciousness?",
+  "Why are requests essential to prayer?",
+  "Is life always guided by Divine Providence?",
+  "Why must prayers be articulated?",
+  "Why does chesed underlie an existential paradox?",
+  "What is the central importance of Og, King of Bashan?",
+  "Is monotheism more than believing in one God?",
+  "Why is diversity Torah's essence?",
+  "What is the meaning of emunah?",
+  "Why must converts embrace their past?",
+  "What is the importance of imagination vs. knowledge?",
+  "What is the distinction between Yisrael and Yaakov identities?"
+];
+
+const topicsAddressed = [
+  "Why observant Jews have limited public involvement",
+  "Why people disconnect from organized religion",
+  "The politicization of Halachah",
+  "Spirituality vs. religiosity",
+  "Religion-science tensions",
+  "Conscience vs. commandment conflicts",
+  "Jewish unity challenges",
+  "Jewish perspectives on material affluence",
+  "Cancel culture through covenant-based analysis"
+];
+---
+
+<Layout
+  title="Lost in Transmission | Rabbi Moshe Miller"
+  description="A profound exploration of the distinction between covenantal and religious approaches to Judaism."
+>
+  <!-- Hero Section -->
+  <section class="book-hero">
+    <div class="container">
+      <div class="book-hero__content">
+        <h1 class="book-hero__title">Lost in Transmission</h1>
+        <p class="book-hero__subtitle">Covenant, Religion, and the Future of Jewish Life</p>
+        <p class="book-hero__author">by Rabbi Moshe Miller</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="book-intro">
+        <blockquote class="book-intro__quote">
+          "Covenant demands choice; religion demands compliance."
+        </blockquote>
+        <p class="book-intro__text">
+          <em>Lost in Transmission</em> offers a groundbreaking exploration of what distinguishes
+          a covenantal approach to Judaism from a purely religious one. Using Israel's contemporary
+          debates—including the military draft controversy—as a lens, Rabbi Miller illuminates
+          humanity's relationship with the Divine in ways that will reshape how readers understand
+          their faith.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Synopsis -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <h2 class="section__title">About the Book</h2>
+      <div class="synopsis">
+        <p>
+          At its core, <em>Lost in Transmission</em> argues that contemporary Judaism has drifted
+          from its covenantal foundations toward a more rigid, religious model. Where <strong>brit</strong>
+          (covenant) is "interactive, creative, spontaneous, and dynamic," religion has become
+          "static, rigid, ritualistic, and authoritarian."
+        </p>
+        <p>
+          This drift, Rabbi Miller contends, has created a profound disconnect between believers
+          and their faith—a gap that manifests in everything from declining religious engagement
+          to the polarization of Jewish communities.
+        </p>
+        <p>
+          Through careful analysis of classical sources and contemporary challenges, the book
+          offers a path back to authentic covenantal living—one that honors tradition while
+          embracing the creative engagement that God truly desires from His people.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endorsements -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Praise for Lost in Transmission</h2>
+      <div class="endorsements-grid">
+        {endorsements.map((endorsement) => (
+          <blockquote class="endorsement">
+            <p class="endorsement__quote">"{endorsement.quote}"</p>
+            <footer class="endorsement__footer">
+              <cite class="endorsement__author">— {endorsement.author}</cite>
+              <span class="endorsement__title">{endorsement.title}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Food for Thought -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Food for Thought</h2>
+      <p class="section__intro">
+        Questions explored throughout the book—each one an invitation to deeper reflection.
+      </p>
+      <div class="questions-grid">
+        {foodForThought.map((question, index) => (
+          <div class="question-card">
+            <span class="question-card__number">{index + 1}</span>
+            <p class="question-card__text">{question}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="section">
+    <div class="container container--narrow">
+      <h2 class="section__title">Topics Addressed</h2>
+      <ul class="topics-list">
+        {topicsAddressed.map((topic) => (
+          <li class="topics-list__item">
+            <svg class="topics-list__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 11 12 14 22 4"></polyline>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+            <span>{topic}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Purchase CTA -->
+  <section class="section section--cta">
+    <div class="container">
+      <div class="purchase-cta">
+        <h2 class="purchase-cta__title">Get Your Copy</h2>
+        <p class="purchase-cta__text">
+          Available now on Amazon in paperback and Kindle editions.
+        </p>
+        <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+          Purchase on Amazon
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Book Hero */
+  .book-hero {
+    padding: var(--space-2xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .book-hero__title {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .book-hero__subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+  }
+
+  .book-hero__author {
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+
+  /* Book Intro */
+  .book-intro {
+    text-align: center;
+  }
+
+  .book-intro__quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-accent);
+    font-style: italic;
+    margin: 0 0 var(--space-xl);
+    padding: var(--space-lg);
+    border-left: 4px solid var(--color-accent);
+    background: var(--color-bg-alt);
+    text-align: left;
+  }
+
+  .book-intro__text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+
+  /* Synopsis */
+  .synopsis {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .synopsis p {
+    margin-bottom: var(--space-lg);
+  }
+
+  .synopsis p:last-child {
+    margin-bottom: 0;
+  }
+
+  .synopsis strong {
+    color: var(--color-primary);
+  }
+
+  /* Section intro */
+  .section__intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+
+  /* Endorsements */
+  .endorsements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .endorsement {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .endorsement__quote {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+  }
+
+  .endorsement__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .endorsement__author {
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .endorsement__title {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+  }
+
+  /* Questions Grid */
+  .questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .question-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .question-card__number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .question-card__text {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  /* Topics List */
+  .topics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .topics-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .topics-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .topics-list__icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    margin-top: 2px;
+  }
+
+  /* Purchase CTA */
+  .section--cta {
+    background: var(--color-bg-alt);
+  }
+
+  .purchase-cta {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .purchase-cta__title {
+    margin-bottom: var(--space-md);
+  }
+
+  .purchase-cta__text {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+  }
+
+  .btn--large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1.1rem;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .book-hero {
+      padding: var(--space-xl) 0;
+    }
+
+    .questions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .endorsements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

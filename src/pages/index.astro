@@ -1,0 +1,521 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Audio shiurim data organized by category
+const audioCategories = [
+  {
+    name: "Biblical Personalities",
+    lectures: [
+      { title: "Abraham: From Love to Fear (Part 1)" },
+      { title: "Abraham: From Love to Fear (Part 2)" },
+      { title: "Abraham, Isaac and the Impact of Laughter" },
+      { title: "Esther (Part 1)" },
+      { title: "Esther (Part 2)" },
+      { title: "Esther (Part 3)" },
+      { title: "Mordechai (Part 1)" },
+      { title: "Mordechai (Part 2)" },
+      { title: "Mordechai (Part 3)" },
+    ]
+  },
+  {
+    name: "Holiday",
+    lectures: [
+      { title: "Purim 2006" },
+      { title: "Purim, Probability and Freewill" },
+    ]
+  },
+  {
+    name: "Miscellaneous",
+    lectures: [
+      { title: "Teshuva – Is G-d Our Therapist?" },
+      { title: "Is Teshuva Behavior Modification?" },
+      { title: "Rabbi Yaakov Weinberg (Great Leaders as Seen Through the Eyes of Their Disciples)" },
+    ]
+  },
+  {
+    name: "Megillat Ruth",
+    lectures: [
+      { title: "Megillat Ruth - Part 1" },
+      { title: "Megillat Ruth - Part 2" },
+      { title: "Megillat Ruth - Part 3" },
+      { title: "Megillat Ruth - Part 4" },
+      { title: "Megillat Ruth - Part 5" },
+      { title: "Megillat Ruth - Part 6" },
+      { title: "Megillat Ruth - Part 7" },
+      { title: "Megillat Ruth - Part 8" },
+      { title: "Megillat Ruth - Part 9" },
+      { title: "Megillat Ruth - Part 10" },
+      { title: "Megillat Ruth - Part 11" },
+      { title: "Megillat Ruth - Part 12" },
+      { title: "Megillat Ruth - Part 13" },
+      { title: "Megillat Ruth - Part 14" },
+    ]
+  }
+];
+
+const videos = [
+  {
+    title: "The Rabbi Akiva Syndrome: An Analysis of Lag B'omer",
+  },
+  {
+    title: "Purim Probability and Freewill",
+  }
+];
+---
+
+<Layout title="Rabbi Moshe Miller | Jewish Educator & Author">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">Rabbi Moshe Miller</h1>
+        <p class="hero__subtitle">Jewish Educator, Author & Scholar</p>
+        <p class="hero__description">
+          Exploring the depths of Jewish thought through teaching, writing, and scholarship.
+          With over 35 years of experience as a Jewish educator, bringing ancient wisdom to contemporary life.
+        </p>
+        <div class="hero__cta">
+          <a href="#shiurim" class="btn btn--primary">Listen to Shiurim</a>
+          <a href="#books" class="btn btn--secondary">Explore Books</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section section--alt" id="about">
+    <div class="container container--narrow">
+      <h2 class="section__title">About the Author</h2>
+      <div class="about__content">
+        <p>
+          Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College in 1977 and embarked on a career
+          of over thirty-five years as a Jewish educator.
+        </p>
+        <p>
+          He has served as principal in Santa Clara, Providence (where he earned an MA from Brown University in 1991),
+          Atlanta, and Miami Beach. He lectured at Michlalah Jerusalem College and was Rosh Kollel of the
+          Boca Raton Community Kollel.
+        </p>
+        <p>
+          He and his wife Grizzy made aliyah in 2010 and currently reside in Jerusalem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Preview Section -->
+  <section class="section" id="books">
+    <div class="container">
+      <h2 class="section__title">Published Works</h2>
+      <div class="books-grid">
+        <article class="book-card">
+          <div class="book-card__content">
+            <h3 class="book-card__title">Lost in Transmission</h3>
+            <p class="book-card__description">
+              A profound exploration of the distinction between covenantal and religious approaches to Judaism.
+              Using Israel's contemporary debates as a lens, this book reshapes how we understand the
+              relationship between the Divine and humanity.
+            </p>
+            <p class="book-card__tagline">"Covenant demands choice; religion demands compliance."</p>
+            <a href="/lost-in-transmission" class="btn btn--primary">Learn More</a>
+          </div>
+        </article>
+        <article class="book-card">
+          <div class="book-card__content">
+            <h3 class="book-card__title">Rising Moon</h3>
+            <p class="book-card__description">
+              A masterful commentary on the Book of Ruth, exploring themes of hesed (kindness),
+              conversion, and Jewish destiny. Praised by scholars as "nothing short of a masterpiece."
+            </p>
+            <p class="book-card__tagline">"The world is built of hesed."</p>
+            <a href="/rising-moon" class="btn btn--primary">Learn More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio Shiurim Section -->
+  <section class="section section--alt" id="shiurim">
+    <div class="container">
+      <h2 class="section__title">Audio Shiurim</h2>
+      <p class="section__intro">
+        Explore a rich collection of Torah lectures covering Biblical personalities, holidays,
+        and deep explorations of Jewish texts.
+      </p>
+
+      <div class="shiurim-categories">
+        {audioCategories.map((category) => (
+          <div class="category">
+            <button class="category__header" aria-expanded="false">
+              <h3 class="category__title">{category.name}</h3>
+              <span class="category__count">{category.lectures.length} lectures</span>
+              <svg class="category__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="category__content">
+              <ul class="lecture-list">
+                {category.lectures.map((lecture) => (
+                  <li class="lecture-item">
+                    <span class="lecture-item__title">{lecture.title}</span>
+                    <button class="lecture-item__play" aria-label={`Play ${lecture.title}`}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Shiurim Section -->
+  <section class="section" id="videos">
+    <div class="container">
+      <h2 class="section__title">Video Shiurim</h2>
+      <div class="videos-grid">
+        {videos.map((video) => (
+          <article class="video-card">
+            <div class="video-card__thumbnail">
+              <svg class="video-card__play" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+            <div class="video-card__content">
+              <h3 class="video-card__title">{video.title}</h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    padding: var(--space-2xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+  }
+
+  .hero__content {
+    max-width: 700px;
+  }
+
+  .hero__title {
+    color: white;
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__description {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .hero .btn--primary {
+    background: white;
+    color: var(--color-primary);
+  }
+
+  .hero .btn--primary:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .hero .btn--secondary {
+    border-color: white;
+    color: white;
+  }
+
+  .hero .btn--secondary:hover {
+    background: white;
+    color: var(--color-primary);
+  }
+
+  /* About Section */
+  .about__content {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .about__content p {
+    margin-bottom: var(--space-lg);
+  }
+
+  .about__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Section intro */
+  .section__intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+
+  /* Books Grid */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .book-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .book-card__content {
+    padding: var(--space-lg);
+  }
+
+  .book-card__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .book-card__description {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+  }
+
+  .book-card__tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    font-size: 1.05rem;
+  }
+
+  /* Shiurim Categories */
+  .shiurim-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .category {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .category__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+
+  .category__header:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .category__title {
+    flex: 1;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .category__count {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+
+  .category__icon {
+    color: var(--color-text-light);
+    transition: transform 0.2s ease;
+  }
+
+  .category__header[aria-expanded="true"] .category__icon {
+    transform: rotate(180deg);
+  }
+
+  .category__content {
+    display: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .category__header[aria-expanded="true"] + .category__content {
+    display: block;
+  }
+
+  .lecture-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lecture-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lecture-item:last-child {
+    border-bottom: none;
+  }
+
+  .lecture-item:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .lecture-item__title {
+    font-weight: 500;
+  }
+
+  .lecture-item__play {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .lecture-item__play:hover {
+    background: var(--color-primary-light);
+    transform: scale(1.1);
+  }
+
+  .lecture-item__play svg {
+    margin-left: 2px; /* Optical alignment for play icon */
+  }
+
+  /* Videos Grid */
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .video-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .video-card__thumbnail {
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .video-card__play {
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .video-card:hover .video-card__play {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  .video-card__content {
+    padding: var(--space-lg);
+  }
+
+  .video-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-xl) 0;
+    }
+
+    .hero__cta {
+      flex-direction: column;
+    }
+
+    .hero__cta .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .books-grid,
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lecture-item {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  // Accordion functionality for shiurim categories
+  document.querySelectorAll('.category__header').forEach(button => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all other categories
+      document.querySelectorAll('.category__header').forEach(otherButton => {
+        otherButton.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current category
+      button.setAttribute('aria-expanded', (!isExpanded).toString());
+    });
+  });
+</script>
