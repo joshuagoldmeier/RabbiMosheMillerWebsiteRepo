@@ -6,49 +6,49 @@ const audioCategories = [
   {
     name: "Biblical Personalities",
     lectures: [
-      { title: "Abraham: From Love to Fear (Part 1)" },
-      { title: "Abraham: From Love to Fear (Part 2)" },
-      { title: "Abraham, Isaac and the Impact of Laughter" },
-      { title: "Esther (Part 1)" },
-      { title: "Esther (Part 2)" },
-      { title: "Esther (Part 3)" },
-      { title: "Mordechai (Part 1)" },
-      { title: "Mordechai (Part 2)" },
-      { title: "Mordechai (Part 3)" },
+      { title: "Abraham: From Love to Fear (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/29" },
+      { title: "Abraham: From Love to Fear (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/30" },
+      { title: "Abraham, Isaac and the Impact of Laughter", url: "https://ravmiller.shiurim.pages.dev/content/31" },
+      { title: "Esther (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/32" },
+      { title: "Esther (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/33" },
+      { title: "Esther (Part 3)", url: "https://ravmiller.shiurim.pages.dev/content/34" },
+      { title: "Mordechai (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/35" },
+      { title: "Mordechai (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/36" },
+      { title: "Mordechai (Part 3)", url: "https://ravmiller.shiurim.pages.dev/content/37" },
     ]
   },
   {
     name: "Holiday",
     lectures: [
-      { title: "Purim 2006" },
-      { title: "Purim, Probability and Freewill" },
+      { title: "Purim 2006", url: "https://ravmiller.shiurim.pages.dev/content/65" },
+      { title: "Purim, Probability and Freewill", url: "https://ravmiller.shiurim.pages.dev/content/66" },
     ]
   },
   {
     name: "Miscellaneous",
     lectures: [
-      { title: "Teshuva – Is G-d Our Therapist?" },
-      { title: "Is Teshuva Behavior Modification?" },
-      { title: "Rabbi Yaakov Weinberg (Great Leaders as Seen Through the Eyes of Their Disciples)" },
+      { title: "Teshuva – Is G-d Our Therapist?", url: "https://ravmiller.shiurim.pages.dev/content/62" },
+      { title: "Is Teshuva Behavior Modification?", url: "https://ravmiller.shiurim.pages.dev/content/63" },
+      { title: "Rabbi Yaakov Weinberg (Great Leaders as Seen Through the Eyes of Their Disciples)", url: "https://ravmiller.shiurim.pages.dev/content/64" },
     ]
   },
   {
     name: "Megillat Ruth",
     lectures: [
-      { title: "Megillat Ruth - Part 1" },
-      { title: "Megillat Ruth - Part 2" },
-      { title: "Megillat Ruth - Part 3" },
-      { title: "Megillat Ruth - Part 4" },
-      { title: "Megillat Ruth - Part 5" },
-      { title: "Megillat Ruth - Part 6" },
-      { title: "Megillat Ruth - Part 7" },
-      { title: "Megillat Ruth - Part 8" },
-      { title: "Megillat Ruth - Part 9" },
-      { title: "Megillat Ruth - Part 10" },
-      { title: "Megillat Ruth - Part 11" },
-      { title: "Megillat Ruth - Part 12" },
-      { title: "Megillat Ruth - Part 13" },
-      { title: "Megillat Ruth - Part 14" },
+      { title: "Megillat Ruth - Part 1", url: null },
+      { title: "Megillat Ruth - Part 2", url: "https://ravmiller.shiurim.pages.dev/content/38" },
+      { title: "Megillat Ruth - Part 3", url: "https://ravmiller.shiurim.pages.dev/content/39" },
+      { title: "Megillat Ruth - Part 4", url: "https://ravmiller.shiurim.pages.dev/content/40" },
+      { title: "Megillat Ruth - Part 5", url: "https://ravmiller.shiurim.pages.dev/content/41" },
+      { title: "Megillat Ruth - Part 6", url: null },
+      { title: "Megillat Ruth - Part 7", url: "https://ravmiller.shiurim.pages.dev/content/42" },
+      { title: "Megillat Ruth - Part 8", url: "https://ravmiller.shiurim.pages.dev/content/43" },
+      { title: "Megillat Ruth - Part 9", url: "https://ravmiller.shiurim.pages.dev/content/44" },
+      { title: "Megillat Ruth - Part 10", url: null },
+      { title: "Megillat Ruth - Part 11", url: "https://ravmiller.shiurim.pages.dev/content/45" },
+      { title: "Megillat Ruth - Part 12", url: "https://ravmiller.shiurim.pages.dev/content/47" },
+      { title: "Megillat Ruth - Part 13", url: "https://ravmiller.shiurim.pages.dev/content/48" },
+      { title: "Megillat Ruth - Part 14", url: "https://ravmiller.shiurim.pages.dev/content/49" },
     ]
   }
 ];
@@ -56,9 +56,11 @@ const audioCategories = [
 const videos = [
   {
     title: "The Rabbi Akiva Syndrome: An Analysis of Lag B'omer",
+    youtubeId: "Weq3kPfMJE8",
   },
   {
     title: "Purim Probability and Freewill",
+    youtubeId: "J3kYpthd42Y",
   }
 ];
 ---
@@ -84,21 +86,20 @@ const videos = [
 
   <!-- About Section -->
   <section class="section section--alt" id="about">
-    <div class="container container--narrow">
+    <div class="container">
       <h2 class="section__title">About the Author</h2>
-      <div class="about__content">
-        <p>
-          Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College in 1977 and embarked on a career
-          of over thirty-five years as a Jewish educator.
-        </p>
-        <p>
-          He has served as principal in Santa Clara, Providence (where he earned an MA from Brown University in 1991),
-          Atlanta, and Miami Beach. He lectured at Michlalah Jerusalem College and was Rosh Kollel of the
-          Boca Raton Community Kollel.
-        </p>
-        <p>
-          He and his wife Grizzy made aliyah in 2010 and currently reside in Jerusalem.
-        </p>
+      <div class="about__layout">
+        <div class="about__image">
+          <img src="/images/RavMosheMillerImage.jpeg" alt="Rabbi Moshe Miller" />
+        </div>
+        <div class="about__content">
+          <p>
+            Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College in 1977 and embarked on a career of over thirty-five years as a Jewish educator. Along the way he has held the position of principal in schools in Santa Clara, California; Providence, Rhode Island where he earned an MA from the department of philosophy at Brown University in 1991; Atlanta, Georgia; and Miami Beach, Florida.
+          </p>
+          <p>
+            He has also lectured at Michlalah Jerusalem College and was the Rosh Kollel of the Boca Raton Community Kollel. He and his wife, Grizzy, made aliyah in 2010 and live in Jerusalem where he writes and teaches.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -109,6 +110,9 @@ const videos = [
       <h2 class="section__title">Published Works</h2>
       <div class="books-grid">
         <article class="book-card">
+          <div class="book-card__image">
+            <img src="/images/LostInTransmissionBookPicture.jpg" alt="Lost in Transmission book cover" />
+          </div>
           <div class="book-card__content">
             <h3 class="book-card__title">Lost in Transmission</h3>
             <p class="book-card__description">
@@ -121,6 +125,9 @@ const videos = [
           </div>
         </article>
         <article class="book-card">
+          <div class="book-card__image">
+            <img src="/images/Rising moon.jpg" alt="Rising Moon book cover" />
+          </div>
           <div class="book-card__content">
             <h3 class="book-card__title">Rising Moon</h3>
             <p class="book-card__description">
@@ -159,11 +166,19 @@ const videos = [
                 {category.lectures.map((lecture) => (
                   <li class="lecture-item">
                     <span class="lecture-item__title">{lecture.title}</span>
-                    <button class="lecture-item__play" aria-label={`Play ${lecture.title}`}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                      </svg>
-                    </button>
+                    {lecture.url ? (
+                      <a href={lecture.url} target="_blank" rel="noopener noreferrer" class="lecture-item__play" aria-label={`Play ${lecture.title}`}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </a>
+                    ) : (
+                      <span class="lecture-item__play lecture-item__play--disabled" aria-label="Unavailable">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -181,10 +196,14 @@ const videos = [
       <div class="videos-grid">
         {videos.map((video) => (
           <article class="video-card">
-            <div class="video-card__thumbnail">
-              <svg class="video-card__play" width="64" height="64" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
+            <div class="video-card__embed">
+              <iframe
+                src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                title={video.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </div>
             <div class="video-card__content">
               <h3 class="video-card__title">{video.title}</h3>
@@ -253,6 +272,25 @@ const videos = [
   }
 
   /* About Section */
+  .about__layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about__image {
+    position: relative;
+  }
+
+  .about__image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
   .about__content {
     font-size: 1.1rem;
     line-height: 1.9;
@@ -264,6 +302,19 @@ const videos = [
 
   .about__content p:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .about__layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      text-align: center;
+    }
+
+    .about__image {
+      max-width: 220px;
+      margin: 0 auto;
+    }
   }
 
   /* Section intro */
@@ -294,6 +345,23 @@ const videos = [
   .book-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .book-card__image {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--color-bg-alt);
+  }
+
+  .book-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .book-card:hover .book-card__image img {
+    transform: scale(1.05);
   }
 
   .book-card__content {
@@ -417,11 +485,25 @@ const videos = [
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    text-decoration: none;
   }
 
   .lecture-item__play:hover {
     background: var(--color-primary-light);
     transform: scale(1.1);
+    color: white;
+  }
+
+  .lecture-item__play--disabled {
+    background: var(--color-border);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .lecture-item__play--disabled:hover {
+    background: var(--color-border);
+    transform: none;
   }
 
   .lecture-item__play svg {
@@ -449,23 +531,15 @@ const videos = [
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
 
-  .video-card__thumbnail {
+  .video-card__embed {
     aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    background: var(--color-bg-alt);
   }
 
-  .video-card__play {
-    opacity: 0.9;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  .video-card:hover .video-card__play {
-    transform: scale(1.1);
-    opacity: 1;
+  .video-card__embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   .video-card__content {

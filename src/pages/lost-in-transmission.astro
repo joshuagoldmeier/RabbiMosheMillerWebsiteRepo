@@ -3,58 +3,85 @@ import Layout from '../layouts/Layout.astro';
 
 const endorsements = [
   {
-    quote: "My teacher and friend, Rabbi Moshe Miller, has the rare gift of making the profound feel accessible and communicating that which is complex with clarity.",
+    quote: "My teacher and friend, Rabbi Moshe Miller, has the rare gift of making the profound feel accessible and communicating that which is complex with clarity. In Lost in Transmission, he masterfully integrates authentic Torah sources with the wisdom of the broader world, revealing a rich, unified vision of truth that resonates deeply with those who are thoughtful and seeking. Rabbi Miller writes as someone who lives what he teaches, combining intellectual rigor with deep humility and personal refinement. This sefer will challenge your thinking, deepen your understanding, and elevate your connection to Torah and to Hashem.",
     author: "Rabbi Efrem Goldberg",
     title: "Senior Rabbi, Boca Raton Synagogue"
   },
   {
-    quote: "Lost in Transmission presents an unusually creative and penetrating reading of Tanach and Midrash. It is a deep work.",
+    quote: "Lost in Transmission presents an unusually creative and penetrating reading of Tanach and Midrash. It is a deep work. Rabbi Miller weaves classic texts into a complex, rigorously developed, and existentially gripping portrayal of Judaism as valuing growth through free choice and independence, self-development, intellectual breadth, openness to the world, and identification with humanity. Such topics as tefillah, teshuvah, chesed, and the lives of Abraham and Joseph emerge into a new light. Insights from the sciences and pointed quotations from literature are numerous. The book is of enormous value in terms of the texts it presents, how it reads them, and the lessons it draws for our lives as Jews today.",
     author: "Dr. David Shatz",
     title: "Ronald P. Stanton University Professor of Philosophy, Ethics, and Religious Thought, Yeshiva University"
   },
   {
-    quote: "Rabbi Moshe Miller's Lost in Transmission is a profound meditation and incisive analysis of the proper relationship between man and G-d.",
+    quote: `Rabbi Moshe Miller's Lost in Transmission is a profound meditation and incisive analysis of the proper relationship between man and G-d. His understanding of the difference between "religion," a static concept and contemporary ideal, vs. the eternal bond of covenant, brit, an evolving relationship, illuminates every aspect of how Jews should live in this world. Rabbi Miller's exposition is always lucid and in places borders on the poetic. Deep philosophical ideas come alive in this book, nourishing to mind and soul.`,
     author: "Dr. Elisheva Carlebach",
     title: "Salo Baron Professor of Jewish History, Culture and Society, Columbia University"
   },
   {
-    quote: "Rabbi Moshe Miller's remarkable gifts of analysis and expression compel the reader to look anew at both the wisdom of Torah and the mysteries of nature.",
+    quote: "Rabbi Moshe Miller's remarkable gifts of analysis and expression compel the reader to look anew at both the wisdom of Torah and the mysteries of nature. Every page contains familiar insights of our sages, but this book beckons us to gaze beneath their surface, discover the limitless depth of our Torah, and realize what has been deprived us through superficiality and convention.",
     author: "Rabbi Steven Pruzansky",
     title: "Rabbi Emeritus, Congregation Bnai Yeshurun, Teaneck, New Jersey"
   }
 ];
 
 const foodForThought = [
-  "What is the distinction between choice and decision?",
-  "What is the meaning of covenantal vs. religious relationships with God?",
-  "How does context affect mitzvah observance?",
-  "What constitutes meaningfulness?",
-  "Are miracles beneficial or harmful?",
-  "Does Creation develop through trial-and-error or divine ordination?",
+  "What is the difference between a choice and a decision?",
+  "What does it mean to have a covenantal relationship with God? What does it mean to have a religious relationship with Him?",
+  "How does context affect the nature of your mitzvah observance?",
+  "What do we mean when we say that something is meaningful?",
+  "Are miracles good or bad?",
+  "Does Creation develop by trial and error, or does God ordain every change?",
   "What is the relationship between prayer and consciousness?",
-  "Why are requests essential to prayer?",
-  "Is life always guided by Divine Providence?",
+  "Why are requests the essence of prayer?",
+  "Are our lives always guided by Divine Providence?",
   "Why must prayers be articulated?",
-  "Why does chesed underlie an existential paradox?",
-  "What is the central importance of Og, King of Bashan?",
-  "Is monotheism more than believing in one God?",
-  "Why is diversity Torah's essence?",
+  "Why does chesed (kindness) lie at the heart of the most important existential paradox of Creation?",
+  "Why does Og, King of Bashan, occupy a position of central importance in the Torah?",
+  "Is monotheism more than the belief in one God?",
+  "Why is diversity the essence of Torah?",
   "What is the meaning of emunah?",
-  "Why must converts embrace their past?",
-  "What is the importance of imagination vs. knowledge?",
-  "What is the distinction between Yisrael and Yaakov identities?"
+  "Why must the convert embrace their past?",
+  "Why is imagination more important than knowledge?",
+  "What is the difference between our identities as Yisrael (Israel) and as Yaakov (Jacob)?"
 ];
 
 const topicsAddressed = [
-  "Why observant Jews have limited public involvement",
-  "Why people disconnect from organized religion",
-  "The politicization of Halachah",
-  "Spirituality vs. religiosity",
-  "Religion-science tensions",
-  "Conscience vs. commandment conflicts",
-  "Jewish unity challenges",
-  "Jewish perspectives on material affluence",
-  "Cancel culture through covenant-based analysis"
+  {
+    title: "Why are the most observant Jews often the least involved in the public square?",
+    description: "Fully committed Jews often avoid involvement in broader issues of the common good and the welfare of the state. The author explains that mitzvot have become largely behavior-based, without an understanding of human agency and religious meaning. We have lost the meaning of covenant and replaced it with an emphasis on compliance. However, the mitzvot shouldn't just be about accruing brownie points in Heaven, but about building a covenantal community on earth, where all Jews feel – and act on – a shared responsibility in building civilization."
+  },
+  {
+    title: "Why do Jews feel disconnected from organized religion, and why do they leave Judaism?",
+    description: "It's not just because of antisemitism, failing schools, the lure of secularism, and the rise of intermarriage. Rather, people leave because they feel that Judaism is defined by external coercion, rewards conformity, punishes honest doubt, and loses a sense of true meaning. People who leave aren't rejecting God; they're rejecting a warped view of Judaism."
+  },
+  {
+    title: "Why has Halachah been weaponized?",
+    description: "Halachah means \"the way\" – it is the way to find meaning in life, purpose in the world, and connection with God. Instead of an instrument of religious meaning, it has become a political bludgeon. External religious practice, drained of internal meaning, instead becomes tribal signaling. This is evident in how rules governing conversion, kashrut, and gender are interpreted, implied, and enforced. In an unfortunate twist, people use Halachic compliance to breed conformity and uniformity, rather than meaning, responsibility, and personal identity as an individual who stands with dignity before God. Rather than emphasize rules alone, we need to restore the context of the rules."
+  },
+  {
+    title: "Are you spiritual or religious?",
+    description: "Why do people leave organized religion and say they are \"spiritual but not religious\"? Why do people seek spiritual alternatives like psychedelics and Eastern practices? Judaism, after all, is supposed to offer transcendence, but people flee – not from ultimate meaning – but from an ossified system. Judaism should therefore return to the dynamic idea of covenant that offers both transcendence and interpersonal meaning."
+  },
+  {
+    title: "Is the animosity between religion and science real or fabricated?",
+    description: "Too many Jews today are wary of science, because they view their Judaism based on fear – fear of their views being falsified, fear of assimilation, fear of confronting harsh realities about the physical universe. However, a covenantal understanding of Judaism embraces scientific truths, building on them to nurture a sense of wonder, foster appreciation of God, improve the world, and promote human advancement. Judaism doesn't need to be protected from scientific advancements; it needs to leverage, promote, and celebrate them."
+  },
+  {
+    title: "Is there a conflict between commandment and conscience?",
+    description: "People surrender their conscience to \"respected\" leaders and charismatic personalities. They exchange moral autonomy for a false sense of belonging. Miller explains that when we suppress moral autonomy in favor of blind obedience, the individual ceases to be a covenantal partner in creation and becomes an object rather than a subject. This insight explains the rise of cult appeal, rabbinic absolutism, political extremism, and groupthink. When the covenant dies, authoritarianism reigns."
+  },
+  {
+    title: "Can Jewish unity be achieved?",
+    description: "Endless calls for \"Ahavat Israel,\" Jewish unity, and \"true-and-open\" dialogue somehow keep falling on deaf ears. The reason is that there is no shared point of origin. Beyond sloganeering, Judaism needs to restore its shared sense of covenant as a common starting point for dialogue and understanding."
+  },
+  {
+    title: "Does Judaism condemn, tolerate, or promote affluence and material success?",
+    description: "Many communities in America are marked by comfort, upward mobility, and conspicuous consumption. Communities in Israel are often marked by the opposite. Beyond the surface-level view of affluence, this phenomenon speaks to the deeper question of meaning. If your Judaism isn't meaningful, you will be more likely to measure your success in material terms. But if you appreciate your covenantal role in Judaism, then material pursuits will be less alluring. As material temptations multiply, distractions from spiritual fulfillment grow, and, ironically, as life gets easier, the quest for meaning can erode."
+  },
+  {
+    title: "What does Judaism have to say about cancel culture?",
+    description: "The Torah prohibits chanifah, which literally means flattery. The core of chanifah and cancel culture is a lack of shared assumptions and true communication. When the covenantal identity is discarded, cowardice, intimidation, cyber-bullying, and cancel culture easily fill the communication vacuum. A society that cannot truthfully speak out about moral issues is already on the verge of collapse. By restoring our shared covenantal responsibility, we might just be able to save civilization itself."
+  }
 ];
 ---
 
@@ -75,42 +102,80 @@ const topicsAddressed = [
 
   <!-- Main Content -->
   <section class="section">
+    <div class="container">
+      <div class="book-intro-layout">
+        <div class="book-intro__image">
+          <img src="/images/LostInTransmissionBookPicture.jpg" alt="Lost in Transmission book cover" />
+        </div>
+        <div class="book-intro">
+          <blockquote class="book-intro__quote">
+            "Covenant demands choice; religion demands compliance."
+          </blockquote>
+          <p class="book-intro__text">
+            <em>Lost in Transmission</em> offers a groundbreaking exploration of what distinguishes
+            a covenantal approach to Judaism from a purely religious one. Using Israel's contemporary
+            debates—including the military draft controversy—as a lens, Rabbi Miller illuminates
+            humanity's relationship with the Divine in ways that will reshape how readers understand
+            their faith.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Book -->
+  <section class="section section--alt">
     <div class="container container--narrow">
-      <div class="book-intro">
-        <blockquote class="book-intro__quote">
-          "Covenant demands choice; religion demands compliance."
-        </blockquote>
-        <p class="book-intro__text">
-          <em>Lost in Transmission</em> offers a groundbreaking exploration of what distinguishes
-          a covenantal approach to Judaism from a purely religious one. Using Israel's contemporary
-          debates—including the military draft controversy—as a lens, Rabbi Miller illuminates
-          humanity's relationship with the Divine in ways that will reshape how readers understand
-          their faith.
+      <h2 class="section__title">About the Book</h2>
+      <div class="about-book">
+        <p>
+          At a moment when Israel is embroiled in one of the most divisive cultural battles in its history—the question of whether and how Haredim should serve in the IDF—this groundbreaking new book argues that the debate cannot be resolved on political grounds alone. Instead, it demands that we reexamine our relationship with God.
+        </p>
+        <p>
+          Rabbi Miller, author of <em>Rising Moon</em>, his acclaimed commentary on the Book of Ruth, contends that a profound conceptual error, pervasive throughout contemporary Jewish conversation, has reshaped the foundations of Torah life. Through a comprehensive analysis that moves from Maimonides to quantum physics, from the Zohar to modern psychology, Miller argues that the Jewish people stand at a civilizational crossroads:
+        </p>
+        <p class="about-book__highlight">
+          Will we build our future on a covenantal relationship with God—or retreat into a purely religious, rule-based framework?
+        </p>
+        <p>
+          The book's central insight is challenging and timely. A covenant demands choice. Religion demands compliance. The Haredi draft debate is ultimately a debate about what kind of people we believe ourselves to be.
+        </p>
+        <p>
+          Miller demonstrates that the definitive distinction of humanity lies in free will, in the capacity to make existential, life-defining choices rather than mere behavioral, incentive-based decisions. A society built only on "religion," he writes, produces conformity, rigidity, and fear; a society built on a covenant produces courage, creativity, and national responsibility.
+        </p>
+        <p>
+          This distinction is not merely theological. It is powerful enough to reshape public policy. If Jewish life is covenantal, then every Jew bears a share in the collective destiny. If it is merely religious, then exemption and insulation become logical outcomes.
+        </p>
+        <h3 class="about-book__subheading">A Book for a Nation at a Turning Point</h3>
+        <p>
+          <em>Lost in Transmission</em> is more than an academic work. It is a declaration of principles for facing the Jewish future, rooted in classical sources, and written in accessible, elegant prose. Miller challenges readers to confront the uncomfortable possibility that externally flourishing religious life may mask a deeper spiritual crisis.
+        </p>
+        <p>
+          As Israel searches for ways to navigate questions of army service, civil society, and national identity, <em>Lost in Transmission</em> offers a daring thesis:
+        </p>
+        <p class="about-book__conclusion">
+          Our divisions are not fundamentally political—they are conceptual. And only a return to the covenant can heal them.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Synopsis -->
-  <section class="section section--alt">
+  <section class="section">
     <div class="container container--narrow">
-      <h2 class="section__title">About the Book</h2>
+      <h2 class="section__title">Synopsis</h2>
       <div class="synopsis">
         <p>
-          At its core, <em>Lost in Transmission</em> argues that contemporary Judaism has drifted
-          from its covenantal foundations toward a more rigid, religious model. Where <strong>brit</strong>
-          (covenant) is "interactive, creative, spontaneous, and dynamic," religion has become
-          "static, rigid, ritualistic, and authoritarian."
+          Jewish life, I believe, stands at a momentous crossroads. We must choose whether to emphasize our ancient covenantal relationship with God, also known as our <strong>brit</strong>, or our recent "religious" relationship with Him. A brit is fundamentally interactive, creative, spontaneous, and dynamic. It develops organically, adjusting whenever necessary, much like a marriage. It involves love, emotion, vitality, and passion. In contrast, religion (as I use the term in this book) is static, rigid, ritualistic, authoritarian, and protective. It is imposed externally and is often experienced as coercive. A brit is essentially about you. Religion is essentially about God.
         </p>
         <p>
-          This drift, Rabbi Miller contends, has created a profound disconnect between believers
-          and their faith—a gap that manifests in everything from declining religious engagement
-          to the polarization of Jewish communities.
+          An example of the difference between brit and religion lies in Zohar's famous description of the Torah as the blueprint for Creation – "God looked into the Torah and created the world" (II, 161:1). By definition, this description must include the entirety of science. Yet many scrupulously observant Jews today see religion as being at odds with science. They either reconcile reluctantly and awkwardly with science or reject many of its supreme insights. In contrast, brit celebrates these discoveries and senses the presence of God within them.
         </p>
         <p>
-          Through careful analysis of classical sources and contemporary challenges, the book
-          offers a path back to authentic covenantal living—one that honors tradition while
-          embracing the creative engagement that God truly desires from His people.
+          Another example is that brit values the contributions other cultures can make to the development of Am Yisrael and is open to assimilating them. Religion is wary and suspicious of different cultures, seeing little value in them. Therefore, brit views galut (exile) as an opportunity to enhance the Jewish people, whereas religion views it as a threat to Jewish survival. This results in radically different galut experiences. Faced with the provocations of contemporary civilization, many have opted for safety, inoculating themselves against outside influences. Yet Zohar (II, 16b) asks, "Why did all the nations subjugate the Jewish people?" And it answers, "So that within the Jewish people, they [the other nations] would live on, for the Jews must incorporate the world."
+        </p>
+        <p>
+          Yet, the contemporary tendency is toward religion and away from brit. I believe that this results from the confusion that pervades Am Yisrael today due to widespread misunderstandings of the foundational concepts and principles discussed in this book. I do not trace the history of what led to this confusion, but whatever the root causes were, these principles were somehow lost in transmission. In this book, I've tried to restate these concepts cogently and coherently, allowing us to rediscover and discuss them. Because the choice before us is not merely theoretical – it will define the future of Jewish life. It's time to rediscover brit and ensure our relationship with God is alive, vibrant, creative, and empowering.
         </p>
       </div>
     </div>
@@ -120,8 +185,19 @@ const topicsAddressed = [
   <section class="section">
     <div class="container">
       <h2 class="section__title">Praise for Lost in Transmission</h2>
-      <div class="endorsements-grid">
-        {endorsements.map((endorsement) => (
+
+      <!-- Featured Quote - Rabbi Efrem Goldberg -->
+      <blockquote class="featured-quote">
+        <p class="featured-quote__text">"{endorsements[0].quote}"</p>
+        <footer class="featured-quote__footer">
+          <cite class="featured-quote__author">— {endorsements[0].author}</cite>
+          <span class="featured-quote__title">{endorsements[0].title}</span>
+        </footer>
+      </blockquote>
+
+      <!-- Other Endorsements -->
+      <div class="endorsements-list">
+        {endorsements.slice(1).map((endorsement) => (
           <blockquote class="endorsement">
             <p class="endorsement__quote">"{endorsement.quote}"</p>
             <footer class="endorsement__footer">
@@ -149,24 +225,43 @@ const topicsAddressed = [
           </div>
         ))}
       </div>
+      <p class="section__conclusion">
+        <em>Lost in Transmission</em> answers these and many other questions that define the nature of the Jewish soul.
+      </p>
+    </div>
+  </section>
+
+  <!-- Book Excerpt -->
+  <section class="section">
+    <div class="container container--narrow">
+      <h2 class="section__title">Book Excerpt</h2>
+      <div class="excerpt">
+        <p class="excerpt__text">
+          In which we discover through Maimonides' interpretation of Genesis 3:22 how the placement of a single comma in the Torah shapes foundational beliefs about humanity's role in the world, the nature of freewill, and our covenantal relationship with God.
+        </p>
+        <blockquote class="excerpt__quote">
+          "Free will is to mind what chance is to matter."
+          <cite>— Charles Darwin, Notebooks on Man, Mind and Materialism</cite>
+        </blockquote>
+        <a href="https://drive.google.com/file/d/1jf4oOA2N_yR870-Fm2tLcU60FCMJcOKv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+          Read More
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Topics -->
   <section class="section">
-    <div class="container container--narrow">
+    <div class="container">
       <h2 class="section__title">Topics Addressed</h2>
-      <ul class="topics-list">
+      <div class="topics-grid">
         {topicsAddressed.map((topic) => (
-          <li class="topics-list__item">
-            <svg class="topics-list__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="9 11 12 14 22 4"></polyline>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-            </svg>
-            <span>{topic}</span>
-          </li>
+          <article class="topic-card">
+            <h3 class="topic-card__title">{topic.title}</h3>
+            <p class="topic-card__description">{topic.description}</p>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 
@@ -213,9 +308,47 @@ const topicsAddressed = [
     opacity: 0.8;
   }
 
+  /* Book Intro Layout */
+  .book-intro-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-intro__image {
+    position: sticky;
+    top: 100px;
+  }
+
+  .book-intro__image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
   /* Book Intro */
   .book-intro {
-    text-align: center;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .book-intro-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .book-intro__image {
+      position: static;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .book-intro {
+      text-align: center;
+    }
   }
 
   .book-intro__quote {
@@ -234,6 +367,45 @@ const topicsAddressed = [
     font-size: 1.15rem;
     line-height: 1.9;
     color: var(--color-text);
+  }
+
+  /* About the Book */
+  .about-book {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .about-book p {
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-book__highlight {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-primary);
+    text-align: center;
+    padding: var(--space-lg) 0;
+  }
+
+  .about-book__subheading {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .about-book__conclusion {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-accent);
+    text-align: center;
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
   }
 
   /* Synopsis */
@@ -263,30 +435,117 @@ const topicsAddressed = [
     font-size: 1.1rem;
   }
 
-  /* Endorsements */
-  .endorsements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .section__conclusion {
+    text-align: center;
+    max-width: 700px;
+    margin: var(--space-xl) auto 0;
+    font-size: 1.15rem;
+    color: var(--color-text);
+    font-family: var(--font-serif);
+  }
+
+  /* Book Excerpt */
+  .excerpt {
+    text-align: center;
+    background: white;
+    padding: var(--space-xl);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .excerpt__text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .excerpt__quote {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-accent);
+    padding: var(--space-lg);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    margin: 0 0 var(--space-lg);
+  }
+
+  .excerpt__quote cite {
+    display: block;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--color-text-light);
+  }
+
+  /* Featured Quote */
+  .featured-quote {
+    max-width: 900px;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: 12px;
+    color: white;
+  }
+
+  .featured-quote__text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+  }
+
+  .featured-quote__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .featured-quote__author {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .featured-quote__title {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  /* Other Endorsements - Stacked List */
+  .endorsements-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
   }
 
   .endorsement {
-    background: white;
-    padding: var(--space-lg);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .endorsement:last-child {
+    border-bottom: none;
   }
 
   .endorsement__quote {
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--color-text);
     margin-bottom: var(--space-md);
     font-style: italic;
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-primary);
   }
 
   .endorsement__footer {
+    padding-left: var(--space-lg);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
@@ -294,7 +553,7 @@ const topicsAddressed = [
 
   .endorsement__author {
     font-size: 0.95rem;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-style: normal;
     font-weight: 600;
   }
@@ -342,29 +601,39 @@ const topicsAddressed = [
     color: var(--color-text);
   }
 
-  /* Topics List */
-  .topics-list {
-    list-style: none;
-    padding: 0;
+  /* Topics Grid */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .topic-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .topic-card__title {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1.4;
+  }
+
+  .topic-card__description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text-light);
     margin: 0;
   }
 
-  .topics-list__item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .topics-list__item:last-child {
-    border-bottom: none;
-  }
-
-  .topics-list__icon {
-    flex-shrink: 0;
-    color: var(--color-accent);
-    margin-top: 2px;
+  @media (max-width: 768px) {
+    .topics-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Purchase CTA */

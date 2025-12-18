@@ -3,34 +3,34 @@ import Layout from '../layouts/Layout.astro';
 
 const endorsements = [
   {
-    quote: "A profound meditation on the Book of Ruth, shot through with fresh insights.",
+    quote: "In Rising Moon, Moshe Miller has written a profound meditation on the Book of Ruth, shot through with fresh insights and arresting interpretations. A bold, original and deeply thought-provoking work.",
     author: "Rabbi Lord Jonathan Sacks",
-    title: "Emeritus Chief Rabbi"
+    title: "Emeritus Chief Rabbi of the United Hebrew Congregations of the Commonwealth"
   },
   {
-    quote: "Will surely blow you over... definitely, positively, unalterably good stuff.",
+    quote: "[This book] will surely blow you over. This is definitely, positively, unalterably good stuff!",
     author: "Rabbi Emmanuel Feldman",
-    title: "Rabbi Emeritus, Congregation Beth Jacob"
+    title: "Rabbi Emeritus, Congregation Beth Jacob, Atlanta; Former Editor of Tradition: A Journal of Orthodox Jewish Thought"
   },
   {
-    quote: "This commentary combines intellectual power, erudition, psychological and philosophical insight.",
+    quote: "Rabbi Moshe Miller's commentary on Ruth is creative and absorbing at virtually every turn. It combines many virtues: intellectual power, erudition, psychological and philosophical insight, and sensitivity to nuances of language and character. The author presents subtle, imaginative connections between the Megillah and a wide array of biblical and midrashic texts and themes. The result is a complex yet moving account of Ruth and of how Hazal understood this beautiful narrative and its place in the life of our people.",
     author: "Dr. David Shatz",
-    title: "Professor, Yeshiva University"
+    title: "Professor of Philosophy, Yeshiva University; Editor of the Torah U-Madda Journal"
   },
   {
-    quote: "I learned something new on almost every page... a great book.",
+    quote: "Inspired by rich and variegated strands of wisdom in Hazal, Rabbi Miller … threads new connections between words and ideas in the pesukim; he uses these to weave a spellbinding interpretive tapestry … By the time we go through Ruth with Rabbi Miller as a guide, we view Jewish history and destiny from a new perspective … I learned something new on almost every page. It is a great book [and] it belongs on the bookshelf of every Jewish home.",
     author: "Dr. Elisheva Carlebach",
-    title: "Professor, Columbia University"
+    title: "Professor of Jewish History, Columbia University; President, American Academy for Jewish Research"
   },
   {
-    quote: "Extremely creative and thought-provoking.",
+    quote: "Rabbi Moshe Miller has a mastery of the sources and a unique and uncanny ability to weave together seemingly disparate clues, allusions and facts in a way that produces a seamless tapestry of a story that is the foundation of the royal house of Israel.",
     author: "Rabbi Steven Pruzansky",
-    title: "Congregation Bnei Yeshurun"
+    title: "Rabbi, Congregation Bnei Yeshurun, Teaneck"
   },
   {
-    quote: "A masterpiece combining literary and psychological sensitivity with midrashic outlook.",
+    quote: "This book is powerful stuff… R. Miller combines literary and psychological sensitivity with a midrashic outlook, somewhat along the lines of Aviva Zornberg. Additionally, I find the commentary very in tune with current trends in our community. R. Miller is very sensitive to issues of power and autonomy, without being radical and anti-authoritarian. He does all this while heeding to a careful reading of the text. This book is nothing short of a masterpiece.",
     author: "Rabbi Gil Student",
-    title: "Jewish Action Magazine"
+    title: "Book Editor of Jewish Action Magazine"
   }
 ];
 
@@ -62,18 +62,23 @@ const foodForThought = [
 
   <!-- Main Content -->
   <section class="section">
-    <div class="container container--narrow">
-      <div class="book-intro">
-        <blockquote class="book-intro__quote">
-          "The world is built of hesed."
-        </blockquote>
-        <p class="book-intro__text">
-          <em>Rising Moon</em> is a masterful commentary on the Book of Ruth, exploring the profound
-          themes of <strong>hesed</strong> (loving-kindness), conversion, and Jewish destiny. Through
-          careful analysis of the biblical text and rabbinic literature, Rabbi Miller illuminates
-          how Ruth's story contains the seeds of redemption itself—from the House of David to the
-          Messianic era.
-        </p>
+    <div class="container">
+      <div class="book-intro-layout">
+        <div class="book-intro__image">
+          <img src="/images/RisingMoonSideAngle.png" alt="Rising Moon book cover" />
+        </div>
+        <div class="book-intro">
+          <blockquote class="book-intro__quote">
+            "The world is built of hesed."
+          </blockquote>
+          <p class="book-intro__text">
+            <em>Rising Moon</em> is a masterful commentary on the Book of Ruth, exploring the profound
+            themes of <strong>hesed</strong> (loving-kindness), conversion, and Jewish destiny. Through
+            careful analysis of the biblical text and rabbinic literature, Rabbi Miller illuminates
+            how Ruth's story contains the seeds of redemption itself—from the House of David to the
+            Messianic era.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -82,13 +87,24 @@ const foodForThought = [
   <section class="section">
     <div class="container">
       <h2 class="section__title">Praise for Rising Moon</h2>
-      <div class="endorsements-grid">
-        {endorsements.map((endorsement) => (
+
+      <!-- Featured Quote - Rabbi Sacks -->
+      <blockquote class="featured-quote">
+        <p class="featured-quote__text">"{endorsements[0].quote}"</p>
+        <footer class="featured-quote__footer">
+          <cite class="featured-quote__author">— {endorsements[0].author}</cite>
+          <span class="featured-quote__title">{endorsements[0].title}</span>
+        </footer>
+      </blockquote>
+
+      <!-- Other Endorsements -->
+      <div class="endorsements-list">
+        {endorsements.slice(1).map((endorsement) => (
           <blockquote class="endorsement">
             <p class="endorsement__quote">"{endorsement.quote}"</p>
             <footer class="endorsement__footer">
               <cite class="endorsement__author">— {endorsement.author}</cite>
-              <span class="endorsement__title">{endorsement.title}</span>
+              {endorsement.title && <span class="endorsement__title">{endorsement.title}</span>}
             </footer>
           </blockquote>
         ))}
@@ -180,9 +196,47 @@ const foodForThought = [
     opacity: 0.8;
   }
 
+  /* Book Intro Layout */
+  .book-intro-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-intro__image {
+    position: sticky;
+    top: 100px;
+  }
+
+  .book-intro__image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
   /* Book Intro */
   .book-intro {
-    text-align: center;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .book-intro-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .book-intro__image {
+      position: static;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .book-intro {
+      text-align: center;
+    }
   }
 
   .book-intro__quote {
@@ -249,30 +303,73 @@ const foodForThought = [
     font-size: 1.1rem;
   }
 
-  /* Endorsements */
-  .endorsements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Featured Quote */
+  .featured-quote {
+    max-width: 900px;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    border-radius: 12px;
+    color: white;
+  }
+
+  .featured-quote__text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+  }
+
+  .featured-quote__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .featured-quote__author {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .featured-quote__title {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  /* Other Endorsements - Stacked List */
+  .endorsements-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
   }
 
   .endorsement {
-    background: white;
-    padding: var(--space-lg);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .endorsement:last-child {
+    border-bottom: none;
   }
 
   .endorsement__quote {
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--color-text);
     margin-bottom: var(--space-md);
     font-style: italic;
+    position: relative;
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-accent);
   }
 
   .endorsement__footer {
+    padding-left: var(--space-lg);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
