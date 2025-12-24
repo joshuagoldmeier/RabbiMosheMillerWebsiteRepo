@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Audio shiurim data organized by category
+const audioCategories = [
+  {
+    name: "Biblical Personalities",
+    lectures: [
+      { title: "Abraham: From Love to Fear (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/29" },
+      { title: "Abraham: From Love to Fear (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/30" },
+      { title: "Abraham, Isaac and the Impact of Laughter", url: "https://ravmiller.shiurim.pages.dev/content/31" },
+      { title: "Esther (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/32" },
+      { title: "Esther (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/33" },
+      { title: "Esther (Part 3)", url: "https://ravmiller.shiurim.pages.dev/content/34" },
+      { title: "Mordechai (Part 1)", url: "https://ravmiller.shiurim.pages.dev/content/35" },
+      { title: "Mordechai (Part 2)", url: "https://ravmiller.shiurim.pages.dev/content/36" },
+      { title: "Mordechai (Part 3)", url: "https://ravmiller.shiurim.pages.dev/content/37" },
+    ]
+  },
+  {
+    name: "Holiday",
+    lectures: [
+      { title: "Purim 2006", url: "https://ravmiller.shiurim.pages.dev/content/65" },
+      { title: "Purim, Probability and Freewill", url: "https://ravmiller.shiurim.pages.dev/content/66" },
+    ]
+  },
+  {
+    name: "Miscellaneous",
+    lectures: [
+      { title: "Teshuva – Is G-d Our Therapist?", url: "https://ravmiller.shiurim.pages.dev/content/62" },
+      { title: "Is Teshuva Behavior Modification?", url: "https://ravmiller.shiurim.pages.dev/content/63" },
+      { title: "Rabbi Yaakov Weinberg (Great Leaders as Seen Through the Eyes of Their Disciples)", url: "https://ravmiller.shiurim.pages.dev/content/64" },
+    ]
+  },
+  {
+    name: "Megillat Ruth",
+    lectures: [
+      { title: "Megillat Ruth - Part 1", url: null },
+      { title: "Megillat Ruth - Part 2", url: "https://ravmiller.shiurim.pages.dev/content/38" },
+      { title: "Megillat Ruth - Part 3", url: "https://ravmiller.shiurim.pages.dev/content/39" },
+      { title: "Megillat Ruth - Part 4", url: "https://ravmiller.shiurim.pages.dev/content/40" },
+      { title: "Megillat Ruth - Part 5", url: "https://ravmiller.shiurim.pages.dev/content/41" },
+      { title: "Megillat Ruth - Part 6", url: null },
+      { title: "Megillat Ruth - Part 7", url: "https://ravmiller.shiurim.pages.dev/content/42" },
+      { title: "Megillat Ruth - Part 8", url: "https://ravmiller.shiurim.pages.dev/content/43" },
+      { title: "Megillat Ruth - Part 9", url: "https://ravmiller.shiurim.pages.dev/content/44" },
+      { title: "Megillat Ruth - Part 10", url: null },
+      { title: "Megillat Ruth - Part 11", url: "https://ravmiller.shiurim.pages.dev/content/45" },
+      { title: "Megillat Ruth - Part 12", url: "https://ravmiller.shiurim.pages.dev/content/47" },
+      { title: "Megillat Ruth - Part 13", url: "https://ravmiller.shiurim.pages.dev/content/48" },
+      { title: "Megillat Ruth - Part 14", url: "https://ravmiller.shiurim.pages.dev/content/49" },
+    ]
+  }
+];
+
+const videos = [
+  {
+    title: "The Rabbi Akiva Syndrome: An Analysis of Lag B'omer",
+    youtubeId: "Weq3kPfMJE8",
+  },
+  {
+    title: "Purim Probability and Freewill",
+    youtubeId: "J3kYpthd42Y",
+  }
+];
+---
+
+<Layout title="Shiurim | Rabbi Moshe Miller">
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Shiurim</h1>
+      <p class="page-hero__subtitle">Torah Lectures by Rabbi Moshe Miller</p>
+    </div>
+  </section>
+
+  <!-- Audio Shiurim Section -->
+  <section class="section section--alt" id="audio">
+    <div class="container">
+      <h2 class="section__title">Audio Shiurim</h2>
+      <p class="section__intro">
+        Explore a rich collection of Torah lectures covering Biblical personalities, holidays,
+        and deep explorations of Jewish texts.
+      </p>
+
+      <div class="shiurim-categories">
+        {audioCategories.map((category) => (
+          <div class="category">
+            <button class="category__header" aria-expanded="false">
+              <h3 class="category__title">{category.name}</h3>
+              <span class="category__count">{category.lectures.length} lectures</span>
+              <svg class="category__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="category__content">
+              <ul class="lecture-list">
+                {category.lectures.map((lecture) => (
+                  <li class="lecture-item">
+                    <span class="lecture-item__title">{lecture.title}</span>
+                    {lecture.url ? (
+                      <a href={lecture.url} target="_blank" rel="noopener noreferrer" class="lecture-item__play" aria-label={`Play ${lecture.title}`}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </a>
+                    ) : (
+                      <span class="lecture-item__play lecture-item__play--disabled" aria-label="Unavailable">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Shiurim Section -->
+  <section class="section" id="video">
+    <div class="container">
+      <h2 class="section__title">Video Shiurim</h2>
+      <div class="videos-grid">
+        {videos.map((video) => (
+          <article class="video-card">
+            <div class="video-card__embed">
+              <iframe
+                src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                title={video.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-card__content">
+              <h3 class="video-card__title">{video.title}</h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .page-hero__title {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  /* Section intro */
+  .section__intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+
+  /* Shiurim Categories */
+  .shiurim-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .category {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .category__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+
+  .category__header:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .category__title {
+    flex: 1;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .category__count {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+
+  .category__icon {
+    color: var(--color-text-light);
+    transition: transform 0.2s ease;
+  }
+
+  .category__header[aria-expanded="true"] .category__icon {
+    transform: rotate(180deg);
+  }
+
+  .category__content {
+    display: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .category__header[aria-expanded="true"] + .category__content {
+    display: block;
+  }
+
+  .lecture-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lecture-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lecture-item:last-child {
+    border-bottom: none;
+  }
+
+  .lecture-item:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .lecture-item__title {
+    font-weight: 500;
+  }
+
+  .lecture-item__play {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+
+  .lecture-item__play:hover {
+    background: var(--color-primary-light);
+    transform: scale(1.1);
+    color: white;
+  }
+
+  .lecture-item__play--disabled {
+    background: var(--color-border);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .lecture-item__play--disabled:hover {
+    background: var(--color-border);
+    transform: none;
+  }
+
+  .lecture-item__play svg {
+    margin-left: 2px; /* Optical alignment for play icon */
+  }
+
+  /* Videos Grid */
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .video-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .video-card__embed {
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-alt);
+  }
+
+  .video-card__embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-card__content {
+    padding: var(--space-lg);
+  }
+
+  .video-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: var(--space-xl) 0;
+    }
+
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lecture-item {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  // Accordion functionality for shiurim categories
+  document.querySelectorAll('.category__header').forEach(button => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all other categories
+      document.querySelectorAll('.category__header').forEach(otherButton => {
+        otherButton.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current category
+      button.setAttribute('aria-expanded', (!isExpanded).toString());
+    });
+  });
+</script>
