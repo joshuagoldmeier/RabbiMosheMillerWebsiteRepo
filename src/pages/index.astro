@@ -94,10 +94,7 @@ const videos = [
         </div>
         <div class="about__content">
           <p>
-            Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College in 1977 and embarked on a career of over thirty-five years as a Jewish educator. Along the way he has held the position of principal in schools in Santa Clara, California; Providence, Rhode Island where he earned an MA from the department of philosophy at Brown University in 1991; Atlanta, Georgia; and Miami Beach, Florida.
-          </p>
-          <p>
-            He has also lectured at Michlalah Jerusalem College and was the Rosh Kollel of the Boca Raton Community Kollel. He and his wife, Grizzy, made aliyah in 2010 and live in Jerusalem where he writes and teaches.
+            Rabbi Moshe Miller, author of <em>Rising Moon: Unraveling the Book of Ruth</em>, was ordained at the Ner Israel Rabbinical College and earned an MA from the Department of Philosophy at Brown University. He has been a Jewish educator for over forty-five years, most recently as Rosh Kollel of the Boca Raton Community Kollel and as a lecturer at Michlalah Jerusalem College for Women. He made <em>aliyah</em> in 2010 and lives in Jerusalem, where he writes and teaches.
           </p>
         </div>
       </div>
@@ -111,30 +108,29 @@ const videos = [
       <div class="books-grid">
         <article class="book-card">
           <div class="book-card__image">
-            <img src="/images/LostInTransmissionBookPicture.jpg" alt="Lost in Transmission book cover" />
+            <img src="/images/LostInTransmissionSideAngle.jpg" alt="Lost in Transmission book cover" />
           </div>
           <div class="book-card__content">
             <h3 class="book-card__title">Lost in Transmission</h3>
             <p class="book-card__description">
               A profound exploration of the distinction between covenantal and religious approaches to Judaism.
-              Using Israel's contemporary debates as a lens, this book reshapes how we understand the
-              relationship between the Divine and humanity.
+              This book reshapes how we understand the relationship between the Divine and humanity.
             </p>
-            <p class="book-card__tagline">"Covenant demands choice; religion demands compliance."</p>
+            <p class="book-card__tagline">"Your paradigm is the context of your life."</p>
             <a href="/lost-in-transmission" class="btn btn--primary">Learn More</a>
           </div>
         </article>
         <article class="book-card">
           <div class="book-card__image">
-            <img src="/images/Rising moon.jpg" alt="Rising Moon book cover" />
+            <img src="/images/RisingMoonSideAngle.png" alt="Rising Moon book cover" />
           </div>
           <div class="book-card__content">
             <h3 class="book-card__title">Rising Moon</h3>
             <p class="book-card__description">
-              A masterful commentary on the Book of Ruth, exploring themes of hesed (kindness),
-              conversion, and Jewish destiny. Praised by scholars as "nothing short of a masterpiece."
+              A masterful commentary on the Book of Ruth, exploring themes of <em>Malkhut</em> (Kingship),
+              <em>hesed</em> (kindness), conversion, and Jewish destiny. Praised by scholars as "nothing short of a masterpiece."
             </p>
-            <p class="book-card__tagline">"The world is built of hesed."</p>
+            <p class="book-card__tagline">"The birth of the king is also the birth of the ultimate lover and beloved."</p>
             <a href="/rising-moon" class="btn btn--primary">Learn More</a>
           </div>
         </article>
@@ -348,15 +344,19 @@ const videos = [
   }
 
   .book-card__image {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    background: rgb(247, 247, 247);
   }
 
   .book-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     transition: transform 0.3s ease;
   }
 

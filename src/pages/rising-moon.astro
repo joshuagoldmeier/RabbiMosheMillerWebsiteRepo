@@ -54,8 +54,7 @@ const foodForThought = [
     <div class="container">
       <div class="book-hero__content">
         <h1 class="book-hero__title">Rising Moon</h1>
-        <p class="book-hero__subtitle">A Commentary on the Book of Ruth</p>
-        <p class="book-hero__author">by Rabbi Moshe Miller</p>
+        <p class="book-hero__subtitle">Unraveling the Book of Ruth</p>
       </div>
     </div>
   </section>
@@ -69,11 +68,11 @@ const foodForThought = [
         </div>
         <div class="book-intro">
           <blockquote class="book-intro__quote">
-            "The world is built of hesed."
+            "The birth of the king is also the birth of the ultimate lover and beloved."
           </blockquote>
           <p class="book-intro__text">
             <em>Rising Moon</em> is a masterful commentary on the Book of Ruth, exploring the profound
-            themes of <strong>hesed</strong> (loving-kindness), conversion, and Jewish destiny. Through
+            themes of <strong><em>Malkhut</em></strong> (Kingship), <em>hesed</em> (loving-kindness), conversion, and Jewish destiny. Through
             careful analysis of the biblical text and rabbinic literature, Rabbi Miller illuminates
             how Ruth's story contains the seeds of redemption itself—from the House of David to the
             Messianic era.
@@ -204,7 +203,7 @@ const foodForThought = [
       <div class="purchase-cta">
         <h2 class="purchase-cta__title">Get Your Copy</h2>
         <p class="purchase-cta__text">
-          Available now on Amazon in paperback and Kindle editions.
+          Available now on Amazon in paperback and hardcover editions.
         </p>
         <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
           Purchase on Amazon
@@ -217,10 +216,30 @@ const foodForThought = [
 <style>
   /* Book Hero */
   .book-hero {
-    padding: var(--space-2xl) 0;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/images/RisingMoonBackgroundPictureTwo.jpg') center center / contain no-repeat;
+    background-color: #000;
     color: white;
     text-align: center;
+    position: relative;
+    aspect-ratio: 700 / 238;
+  }
+
+  .book-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .book-hero__content {
+    position: relative;
+    z-index: 1;
   }
 
   .book-hero__title {
