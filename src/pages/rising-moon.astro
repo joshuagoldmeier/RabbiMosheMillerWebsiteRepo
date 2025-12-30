@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const endorsements = [
   {
     quote: "In Rising Moon, Moshe Miller has written a profound meditation on the Book of Ruth, shot through with fresh insights and arresting interpretations. A bold, original and deeply thought-provoking work.",
-    author: "Rabbi Lord Jonathan Sacks",
+    author: "Rabbi Lord Jonathan Sacks, Z\"TL",
     title: "Emeritus Chief Rabbi of the United Hebrew Congregations of the Commonwealth"
   },
   {
@@ -116,7 +116,7 @@ const foodForThought = [
     <div class="container container--narrow">
       <div class="video-endorsement">
         <div class="video-endorsement__info">
-          <h2 class="video-endorsement__name">Rabbi Berel Wein</h2>
+          <h2 class="video-endorsement__name">Rabbi Berel Wein, Z"TL</h2>
           <p class="video-endorsement__title">Rabbi of Beit Knesset Hanasi, Jerusalem</p>
           <p class="video-endorsement__title">Founder and Director of the Destiny Foundation</p>
         </div>
@@ -205,15 +205,90 @@ const foodForThought = [
         <p class="purchase-cta__text">
           Available now on Amazon in paperback and hardcover editions.
         </p>
-        <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+        <a href="https://www.amazon.com/Rising-Moon-Unraveling-Book-Ruth/dp/B0BQJFTX72/ref=sr_1_1?crid=1Y9YNKR6Y9M7V&dib=eyJ2IjoiMSJ9.sz47bi-7SK0Eq2tVrWki7pB2o96KDV0b6EkqenkDzqmG_c1euZS_K5r4RC0Ep24C9X7pje9YncE1DmQrRt57etcde-c4T7j-PdGNc_3lBXFZ1whTbd6oun_GxjPtqL_hPyGW7n49tjxRnfXMzmB4gPOEoaDpCtPfIFq-672Y7FeHmdjdj4phbzvKU1IyYJMEQ2GAPDPurPd4H3-oqdESqo66kOx5AM-9KSpZeV3r6dw.h2VaqduXo9XU0gk3ILEJOxSehmm4qv6MHXdDgqWyhgw&dib_tag=se&keywords=rising+moon+miller&qid=1767083832&sprefix=rising+moon+miller%2Caps%2C364&sr=8-1" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
           Purchase on Amazon
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <span class="back-to-top__text">Back to Top</span>
+  </button>
 </Layout>
 
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop?.classList.add('visible');
+    } else {
+      backToTop?.classList.remove('visible');
+    }
+  });
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 <style>
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 48px;
+    border-radius: 24px;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+
+  .back-to-top__text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    .back-to-top {
+      width: 48px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .back-to-top__text {
+      display: none;
+    }
+  }
+
   /* Book Hero */
   .book-hero {
     display: flex;

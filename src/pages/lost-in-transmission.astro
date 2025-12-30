@@ -100,11 +100,11 @@ const topicsAddressed = [
   </section>
 
   <!-- Main Content -->
-  <section class="section">
+  <section class="section section--book-intro">
     <div class="container">
       <div class="book-intro-layout">
         <div class="book-intro__image">
-          <img src="/images/LostInTransmissionBookPicture.jpg" alt="Lost in Transmission book cover" />
+          <img src="/images/LostInTransmissionSideAngle.jpg" alt="Lost in Transmission book cover" />
         </div>
         <div class="book-intro">
           <blockquote class="book-intro__quote">
@@ -232,23 +232,123 @@ const topicsAddressed = [
       <div class="purchase-cta">
         <h2 class="purchase-cta__title">Get Your Copy</h2>
         <p class="purchase-cta__text">
-          Available now on Amazon in paperback and Kindle editions.
+          Available now in paperback and hardcover editions.
         </p>
-        <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
-          Purchase on Amazon
+        <a href="https://kodeshpress.com/product/lost-in-transmission-recovering-authentic-torah-teachings/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+          Purchase Now
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <span class="back-to-top__text">Back to Top</span>
+  </button>
 </Layout>
 
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop?.classList.add('visible');
+    } else {
+      backToTop?.classList.remove('visible');
+    }
+  });
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 <style>
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 48px;
+    border-radius: 24px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+
+  .back-to-top__text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    .back-to-top {
+      width: 48px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .back-to-top__text {
+      display: none;
+    }
+  }
+
+  /* Book Intro Section */
+  .section--book-intro {
+    background-color: rgb(247, 247, 247);
+  }
+
   /* Book Hero */
   .book-hero {
-    padding: var(--space-2xl) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/images/BackgoundPicureLiTBanner.jpg') center center / cover no-repeat;
+    background-color: #000;
     color: white;
     text-align: center;
+    position: relative;
+    height: 450px;
+  }
+
+  .book-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .book-hero__content {
+    position: relative;
+    z-index: 1;
   }
 
   .book-hero__title {
@@ -286,8 +386,6 @@ const topicsAddressed = [
 
   .book-intro__image img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
 
   /* Book Intro */
@@ -314,7 +412,7 @@ const topicsAddressed = [
 
   .book-intro__quote {
     font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     color: var(--color-accent);
     font-style: italic;
     margin: 0 0 var(--space-xl);
