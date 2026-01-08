@@ -6,16 +6,21 @@ import Layout from '../layouts/Layout.astro';
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="hero__content">
-        <h1 class="hero__title">Rabbi Moshe Miller</h1>
-        <p class="hero__subtitle">Jewish Educator, Author & Scholar</p>
-        <p class="hero__description">
-          Exploring the depths of Jewish thought through teaching, writing, and scholarship.
-          With over 45 years of experience as a Jewish educator, bringing ancient wisdom to contemporary life.
-        </p>
-        <div class="hero__cta">
-          <a href="/shiurim" class="btn btn--primary">Listen to Shiurim</a>
-          <a href="#books" class="btn btn--secondary">Explore Books</a>
+      <div class="hero__layout">
+        <div class="hero__content">
+          <h1 class="hero__title">Rabbi Moshe Miller</h1>
+          <p class="hero__subtitle">Jewish Educator, Author & Scholar</p>
+          <p class="hero__description">
+            Exploring the depths of Jewish thought through teaching, writing, and scholarship.
+            With over 45 years of experience as a Jewish educator, bringing ancient wisdom to contemporary life.
+          </p>
+          <div class="hero__cta">
+            <a href="/shiurim" class="btn btn--primary">Listen to Shiurim</a>
+            <a href="#books" class="btn btn--secondary">Explore Books</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="/images/RavMosheMillerImage.jpeg" alt="Rabbi Moshe Miller" />
         </div>
       </div>
     </div>
@@ -25,15 +30,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="section section--alt" id="about">
     <div class="container">
       <h2 class="section__title">About the Author</h2>
-      <div class="about__layout">
-        <div class="about__image">
-          <img src="/images/RavMosheMillerImage.jpeg" alt="Rabbi Moshe Miller" />
-        </div>
-        <div class="about__content">
-          <p>
-            Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College and earned an MA from the Department of Philosophy at Brown University. He has been a Jewish educator for over forty-five years, most recently as Rosh Kollel of the Boca Raton Community Kollel and as a lecturer at Michlalah Jerusalem College for Women. He made <em>aliyah</em> in 2010 and lives in Jerusalem, where he writes and teaches.
-          </p>
-        </div>
+      <div class="about__content">
+        <p>
+          Rabbi Moshe Miller was ordained at the Ner Israel Rabbinical College and earned an MA from the Department of Philosophy at Brown University. He has been a Jewish educator for over forty-five years, most recently as Rosh Kollel of the Boca Raton Community Kollel and as a lecturer at Michlalah Jerusalem College for Women. He made <em>aliyah</em> in 2010 and lives in Jerusalem, where he writes and teaches.
+        </p>
       </div>
     </div>
   </section>
@@ -84,8 +84,32 @@ import Layout from '../layouts/Layout.astro';
     color: white;
   }
 
+  .hero__layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   .hero__content {
-    max-width: 700px;
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .hero__image {
+    flex-shrink: 0;
+  }
+
+  .hero__image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   }
 
   .hero__title {
@@ -133,28 +157,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* About Section */
-  .about__layout {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: var(--space-xl);
-    align-items: start;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .about__image {
-    position: relative;
-  }
-
-  .about__image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  }
-
   .about__content {
+    max-width: 800px;
+    margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.9;
+    text-align: center;
   }
 
   .about__content p {
@@ -163,19 +171,6 @@ import Layout from '../layouts/Layout.astro';
 
   .about__content p:last-child {
     margin-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
-    .about__layout {
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-      text-align: center;
-    }
-
-    .about__image {
-      max-width: 220px;
-      margin: 0 auto;
-    }
   }
 
   /* Section intro */
@@ -258,8 +253,20 @@ import Layout from '../layouts/Layout.astro';
       padding: var(--space-xl) 0;
     }
 
+    .hero__layout {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: var(--space-xl);
+    }
+
+    .hero__image img {
+      width: 200px;
+      height: 200px;
+    }
+
     .hero__cta {
       flex-direction: column;
+      align-items: center;
     }
 
     .hero__cta .btn {
